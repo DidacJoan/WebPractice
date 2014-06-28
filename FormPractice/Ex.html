@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario Practica</title>
+</head>
+<body>
+	<div id="container" style="width:1000px">
+		<div id="header" style="background-color:CadetBlue ">
+		<h1 style="margin-bottom:0;color:White">Mi sitio Web</h1>
+
+		<form id="myForm">
+
+			<fieldset>
+				<legend>Datos Personales</legend>
+				<div id="left" style="width:500px;float:left">
+					<label for  = "dni">D.N.I</label>
+					<input name = "dni" size="9"> - <input type = "text" name = "dniLetter" size="1"><br/>
+
+					<label for  = "nombre">Nombre</label>
+					<input name = "nombre" size="10"> <br/>
+
+					<label for  = "apellidos">Apellidos</label>
+					<input name = "apellidos" size="20"> <br/>
+
+					<label for  = "correo">Correo-e</label>
+					<input type = "mail" name = "correo"> <br/>
+				</div>
+				<div id="right" style="float:left">
+					<label for="sexo">Sexo</label> <br/>
+					<input type="radio" name="sexo" value="hombre">Hombre <br/>
+					<input type="radio" name="sexo" value="mujer">Mujer <br/>
+				</div>
+			</fieldset>
+	
+			<fieldset>
+				<legend>Direccion</legend>
+				
+				<label for="calle">Calle/Avenida</label>
+				<input name = "calle" size="100"> <br/>
+
+				<label for="poblacion">Poblacion</label>
+				<input name = "poblacion" size="79"> 
+
+				<label for="provincia">Provincia</label>
+				<select name="provincia" selected="default">
+					<option value="default">---</option>
+  					<option value="barcelona">Barcelona</option>
+  					<option value="lleida">Lleida</option>
+  					<option value="tarragona">Tarragona</option>
+  					<option value="gerona">Gerona</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<legend>Practica en grupo</legend>
+
+				<label for="archivo">Archivo</label>
+				<input name="archivo" size="30">
+
+				<input type="file" name="boton"> <br/>
+
+				<input type="checkbox" name="archivo" value="comprimido">archivo comprimido
+				<input type="checkbox" name="archivo" value="encriptado">archivo encriptado <br/>
+
+				<label for="descripcion">Descripcion de la practica</label> <br/>
+				<input name="descripcion" style="width:600px;height:200px"> 
+			</fieldset>
+			<div style="text-align:center">
+				<input type="submit" name="enviar">
+			</div>
+		</form>
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>
