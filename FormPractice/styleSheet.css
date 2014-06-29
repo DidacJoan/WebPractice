@@ -1,0 +1,17 @@
+#container { width:1000px }
+
+#header { background-color:CadetBlue }
+
+#left {
+	width:500px;
+	float:left
+}
+
+#right { float:left }
+
+#buttonDiv { text-align:center }
+
+h1 { 
+	margin-bottom:0; 
+	color:White
+}

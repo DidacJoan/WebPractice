@@ -1,58 +1,81 @@
-document.forms["myForm"].addEventListener("submit",checkForm,false);
-document.forms["myForm"]["boton"].addEventListener("change",uploadText,false);
+$(document).ready(function ()
+{
+	$("#myForm").submit(function()
+	{
+		 return checkForm();
+	});
+
+	$("#myForm input[name=boton]").change(function() 
+	{
+		$("#myForm input[name=archivo]").val($("#myForm input[name=boton]").val());
+	});
+});
 
 function checkForm()
 {
-	var dni   = document.forms["myForm"]["dni"].value,
-		nombre    = document.forms["myForm"]["nombre"].value, 
-		apellidos = document.forms["myForm"]["apellidos"].value,
-		correo    = document.forms["myForm"]["correo"].value,
-		calle     = document.forms["myForm"]["calle"].value,
-		poblacion = document.forms["myForm"]["poblacion"].value,
-		provincia = document.forms["myForm"]["provincia"].value,
-		archivo   = document.forms["myForm"]["archivo"].value;
+	var dni		  = $("#myForm input[name=dni]").val(),
+		nombre    = $("#myForm input[name=nombre]").val(),
+		apellidos = $("#myForm input[name=apellidos]").val(),
+		correo    = $("#myForm input[name=correo]").val(),
+		calle     = $("#myForm input[name=calle]").val(),
+		poblacion = $("#myForm input[name=poblacion]").val(),
+		provincia = $("#myForm input[name=provincia]").val(),
+		archivo   = $("#myForm input[name=archivo]").val();
 
-	if ( dni == null || dni == "") 
+	var allCorrect = true;
+
+	if ( dni == null || dni == "" || dni.length < 9) {
 		alert("Rellena el campo del dni correctamente");
+		allCorrect = false;
+	}
 
-	if (nombre == null || nombre === "") 		
+	if (nombre == null || nombre === "") {	
 		alert("Rellena el campo del nombre");
+		allCorrect = false;
+	}
 	
-	if (apellidos == null || apellidos === "") 	
+	if (apellidos == null || apellidos === ""){
 		alert("Rellena el campo del apellido");
+		allCorrect = false;
+	}
 		
-	if (correo == null || correo === "") 		
+	if (correo == null || correo === ""){ 		
 		alert("Rellena el campo del correo");
-		
-	if (emptyRadio) 	
-		alert("Rellena el campo del sexo");
-	
-	if (calle == null || calle === "") 		
-		alert("Rellena el campo de la calle");
-	
-	if (poblacion == null || poblacion === "") 	
-		alert("Rellena el campo de la poblacion");
-	
-	if (provincia === "default")
-		alert("Selecciona una provincia");
-	
-	if (archivo == null || archivo === "") 		
-		alert("Selecciona un archivo"); 
-}
+		allCorrect = false;
+	}
 
-function uploadText() 
-{
-	var boton = document.forms["myForm"]["boton"].value,
-		text = document.forms["myForm"]["archivo"].value;
-	archivo = boton;
+	if (emptyRadio){
+		alert("Rellena el campo del sexo");
+		allCorrect = false;
+	}
+	
+	if (calle == null || calle === ""){
+		alert("Rellena el campo de la calle");
+		allCorrect = false;
+	}
+	
+	if (poblacion == null || poblacion === ""){
+		alert("Rellena el campo de la poblacion");
+		allCorrect = false;
+	}
+	
+	if (provincia === "default"){
+		alert("Selecciona una provincia");
+		allCorrect = false;
+	}
+	
+	if (archivo == null || archivo === ""){
+		alert("Selecciona un archivo"); 
+		allCorrect = false;
+	}
+	return allCorrect;
 }
 
 function emptyRadio()
 {
-	var valuesArray = document.forms["myForm"]["sexo"];
+	var valuesArray = $("#myForm input[name=sexo]").val()
 	for(var i = 0; i < valuesArray.length; ++i) 
 	{
-		alert(valuesArray[i].checked);
 		if(valuesArray[i].checked == true) return false;
 	}
 	return true;

@@ -2,19 +2,28 @@
 <html>
 <head>
 	<title>Formulario Practica</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="styleSheet.css">
 </head>
 <body>
-	<div id="container" style="width:1000px">
-		<div id="header" style="background-color:CadetBlue ">
-		<h1 style="margin-bottom:0;color:White">Mi sitio Web</h1>
+	<div id="container">
+		<div id="header">
+		<h1>Mi sitio Web</h1>
 
 		<form id="myForm">
 
 			<fieldset>
 				<legend>Datos Personales</legend>
+<<<<<<< HEAD
+				<div id="left">
+					<label for  = "dni">D.N.I</label>
+					<input name = "dni" size="9"> - <input type = "text" name = "dniLetter" size="1"><br/>
+=======
 				<div id="left" style="width:500px;float:left">
 					<label for="dni">D.N.I</label>
 					<input name="dni" size="9"> - <input type="text" name="dniLetter" size="1"><br/>
+>>>>>>> origin/master
 
 					<label for="nombre">Nombre</label>
 					<input name="nombre" size="10"> <br/>
@@ -25,7 +34,7 @@
 					<label for="correo">Correo-e</label>
 					<input type="mail" name="correo"> <br/>
 				</div>
-				<div id="right" style="float:left">
+				<div id="right">
 					<label for="sexo">Sexo</label> <br/>
 					<input type="radio" name="sexo" value="hombre">Hombre <br/>
 					<input type="radio" name="sexo" value="mujer">Mujer <br/>
@@ -55,22 +64,21 @@
 				<legend>Practica en grupo</legend>
 
 				<label for="archivo">Archivo</label>
-				<input name="archivo" size="30">
+				<input name="archivo" id="archivo" size="60">
 
-				<input type="file" name="boton"> <br/>
+				<input type="file" name="boton" id="boton"> <br/>
 
 				<input type="checkbox" name="archivo" value="comprimido">archivo comprimido
 				<input type="checkbox" name="archivo" value="encriptado">archivo encriptado <br/>
 
 				<label for="descripcion">Descripcion de la practica</label> <br/>
-				<input name="descripcion" style="width:600px;height:200px"> 
+				<textarea rows="10" cols="50"></textarea>
 			</fieldset>
-			<div style="text-align:center">
+			<div id="butonDiv">
 				<input type="submit" name="enviar">
 			</div>
 		</form>
 	</div>
-	<script src="script.js"></script>
 </body>
 
 </html>
